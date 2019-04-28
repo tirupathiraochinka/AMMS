@@ -40,6 +40,17 @@ export class DashboardPageComponent implements OnInit {
     if(this.loginModel.Status==1 && this.loginModel.IsActive){
       this.isAdmin=true;
     }
+
+    if( window.localStorage )
+    {
+      if(!localStorage.getItem('firstLoad') )
+      {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }  
+      else
+        localStorage.removeItem('firstLoad');
+    }
   }
 
   redirectTo(type){

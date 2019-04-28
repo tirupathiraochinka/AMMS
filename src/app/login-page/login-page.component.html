@@ -4,7 +4,7 @@
   <div class="preloader"></div>
  
   <!-- Main Header-->
-  <header class="main-header header-style-one">
+  <header class="main-header" [ngClass]="isService?'header-style-five':'header-style-one'">
   
     <!-- Header Top -->
     <div class="header-top">
@@ -66,7 +66,7 @@
             <div class="outer-container clearfix">
                   <!--Logo Box-->
                   <div class="logo-box">
-                      <div class="logo"><a><img src="../../assets/images/PHOTO-2019-03-19-01-54-50.png" width="70" height="50" alt="">America's Marketing & Media Sollutions LLC</a></div>
+                      <div class="logo"><a><img src="../../assets/images/PHOTO-2019-03-19-01-54-50.png" width="70" height="50" alt="">America's Marketing & Media Solutions LLC</a></div>
                   </div>
                   
                   <!--Nav Outer-->
@@ -93,7 +93,7 @@
                                           <li><a href="index-4.html">Header Style 04</a></li>
                                       </ul> -->
                                   </li>
-                                  <li class="dropdown"><a [routerLink]="['/home']">Services</a>
+                                  <li class="dropdown"><a [routerLink]="['/services']">Services</a>
                                     <!-- <ul>
                                           <li><a >Search Engine Optimization</a></li>
                                           
@@ -142,7 +142,7 @@
               <div class="outer-container clearfix">
                   <!--Logo Box-->
                   <div class="logo-box pull-left">
-                      <div class="logo"><a><img src="../../assets/images/PHOTO-2019-03-19-01-54-50.png" width="70" height="50" alt="">America's Marketing & Media Sollutions LLC</a></div>
+                      <div class="logo"><a><img src="../../assets/images/PHOTO-2019-03-19-01-54-50.png" width="70" height="50" alt="">America's Marketing & Media Solutions LLC</a></div>
                   </div>
                   
                   <!--Nav Outer-->
@@ -161,14 +161,9 @@
                           <div class="navbar-collapse collapse clearfix">
                               <ul class="navigation clearfix">
                                   <li class="current dropdown"><a [routerLink]="['/home']">Home</a>
-                                    <!-- <ul>
-                                          <li><a href="index.html">Header Style 01</a></li>
-                                          <li><a href="index-2.html">Header Style 02</a></li>
-                                          <li><a href="index-3.html">Header Style 03</a></li>
-                                          <li><a href="index-4.html">Header Style 04</a></li>
-                                      </ul> -->
+                                 
                                   </li>
-                                  <li class="dropdown"><a [routerLink]="['/home']">Services</a>
+                                  <li class="dropdown"><a [routerLink]="['/services']">Services</a>
                                     <!-- <ul>
                                           <li><a href="services.html">Search Engine Optimization</a></li>
                                           
@@ -177,30 +172,10 @@
                                   <li class="dropdown"><a [routerLink]="['/aboutcompany']">company</a>
                                     <!-- <ul>
                                           <li><a href="about.html">About Our Company</a></li>
-                                          <li><a href="seo.html">SEO Analysis</a></li>
-                                          <li><a href="mobile-friendly.html">Mobile Friendly Test</a></li>
-                                          <li><a href="error-page.html">404 Page</a></li>
-                                          <li><a href="quote.html">Get a Quote</a></li>
-                                          <li><a href="testimonial.html">Testimonials</a></li>
-                                          <li><a href="comming-soon.html">Coming Soon</a></li>
-                                          <li><a href="contact.html">Contact Us</a></li>
+                                         
                                       </ul> -->
                                   </li>
-                                  <!-- <li class="dropdown"><a >Case Studies</a>
-                                    <ul>
-                                          <li><a href="case.html">Case Studies Default</a></li>
-                                          <li><a href="cases-text.html">Case Studies Modern</a></li>
-                                          <li><a href="cases-single.html">Single Case</a></li>
-                                      </ul>
-                                  </li>
-                                  <li><a href="price.html">Pricing</a></li>
-                                  <li class="dropdown"><a >Blog</a>
-                                    <ul>
-                                          <li><a href="blog.html">Blog Default</a></li>
-                                          <li><a href="blog-classic.html">Blog Large Image</a></li>
-                                          <li><a href="blog-detail.html">Single Post</a></li>
-                                      </ul>
-                                  </li> -->
+                                  
                                </ul>
                           </div>
                       </nav>
@@ -218,9 +193,8 @@
   </header>
   <!--End Main Header -->
 
-  <div style="margin-top:13%;">
+  
   <router-outlet></router-outlet>
-</div>
   <!--Main Footer-->
   <footer class="main-footer">
     <div class="auto-container">
@@ -229,42 +203,10 @@
           <div class="widgets-section">
             <div class="row clearfix">
                 
-                  <!--Column-->
-                  <div class="column col-md-4 col-sm-6 col-xs-12">
-          <div class="footer-widget links-widget">
-                        <div class="footer-title">
-                            <h2>Usefull Links</h2>
-                          </div>
-                          <div class="widget-content">
-                            <div class="row clearfix">
-                                <div class="widget-column col-md-6 col-sm-6 col-xs-12">
-                                    <ul class="footer-list">
-                                        <li><a >About Us</a></li>
-                                          <li><a >Our Services</a></li>
-                                          <li><a >Why Choose Us</a></li>
-                                          <li><a >How It Works</a></li>
-                                          <li><a >News & Updates</a></li>
-                                      </ul>
-                                  </div>
-                                  <div class="widget-column col-md-6 col-sm-6 col-xs-12">
-                                    <ul class="footer-list">
-                                        <li><a >Testimonials</a></li>
-                                          <li><a >FAQ’s</a></li>
-                                          <li><a >Pricing Plans</a></li>
-                                          <li><a >Contact Us</a></li>
-                                          <li><a >Privacy Policy</a></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!--Column-->
                   <div class="column col-md-4 col-sm-6 col-xs-12">
           <div class="footer-widget subscribe-widget">
                         <div class="footer-title">
-                            <h2>Subscribe Us</h2>
+                            <h2>Subscribe Us </h2>
                           </div>
                           <div class="widget-content">
                             <div class="text">Subscribe us for recieve latest Updates <br> News and Offers.</div>
@@ -323,7 +265,7 @@
           
       </div>
       <!--Copyright-->
-      <div class="copyright">Copyright &copy; 2019 The <a >America's Marketing & Media Sollutions LLC</a>. All rights reserved.</div>
+      <div class="copyright">Copyright &copy; 2019 The <a >America's Marketing & Media Solutions LLC</a>. All rights reserved.</div>
   </footer>
   <!--Main Footer-->
   

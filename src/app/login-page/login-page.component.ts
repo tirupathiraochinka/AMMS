@@ -13,6 +13,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
+  static isServiceStyle:boolean;
   constructor(private api: ApiService, private customer: CustomerService,location: PlatformLocation, private router: Router,
     private formBuilder: FormBuilder,private dataAccess :DataAccessService,
     private toastr: ToastrService) {
@@ -33,6 +34,7 @@ export class LoginPageComponent {
   }
 
   tryLogin() {
+
     console.log(this.login.value)
     this.api.login(
       this.login.value.Username,
@@ -53,19 +55,23 @@ export class LoginPageComponent {
   }
 
 
-  title = 'AmericanExpProj';
   login: FormGroup;
   submitted = false;
   userInfo:any;
   public minDate: Date = new Date ();
 
-
+  get isService() {
+    return LoginPageComponent.isServiceStyle;
+  }
 
   ngOnInit() {
+    console.log(LoginPageComponent.isServiceStyle);
     this.login = this.formBuilder.group({
       Username : ['', Validators.required],
       Password : ['', Validators.required],
     }, );
+
+  
 
 }
 

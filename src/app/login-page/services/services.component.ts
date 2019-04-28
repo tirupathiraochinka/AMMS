@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginPageComponent } from '../login-page.component';
 
 @Component({
   selector: 'app-services',
@@ -10,6 +11,9 @@ export class ServicesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    LoginPageComponent.isServiceStyle=true;
+    console.log(LoginPageComponent.isServiceStyle);
+    
   }
 
 }
