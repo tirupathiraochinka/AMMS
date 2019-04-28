@@ -1,0 +1,197 @@
+<div class="page-wrapper">
+ 	
+  <!-- Preloader -->
+  <div class="preloader"></div>
+ 
+  <!-- Main Header-->
+  <header class="main-header header-style-one">
+  
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="auto-container">
+            <div class="top-outer clearfix">
+                  
+                  <!--Top Left-->
+                  <div class="top-left">
+                    <ul class="links clearfix">
+                        <!--Language-->
+                          <!-- <li class="language dropdown"><a class="btn btn-default dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ><span class="flag-img"><img src="../../assets/images/icons/flag.jpg" alt="" /></span>English &nbsp;<span class="fa fa-angle-down"></span></a>
+                              <ul class="dropdown-menu style-one" aria-labelledby="dropdownMenu2">
+                                  <li><a>English</a></li>
+                                  <li><a>German</a></li>
+                                  <li><a>Arabic</a></li>
+                                  <li><a>Hindi</a></li>
+                              </ul>
+                          </li> -->
+                        <!-- <li><a ><span class="icon fa fa-phone"></span>Talk With Our Spacialist: <strong>+0 625-07520-6644</strong> </a></li>
+                          <li><a ><span class="icon"></span>Contact Us</a></li> -->
+                      </ul>
+                  </div>
+                  
+                  <!--Top Right-->
+                  <!-- <div class="top-right clearfix">
+                    <ul class="clearfix">
+                          <li><a [routerLink]="['/login']"><span class="icon flaticon-user"></span>Login</a> <span>or</span> <a><span class="icon flaticon-upload"></span>Register</a></li>
+                          <li class="search-box-outer">
+                              <div class="dropdown">
+                                  <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                  <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                      <li class="panel-outer">
+                                          <div class="form-container">
+                                                  <div class="form-group">
+                                                      <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                      <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                                  </div>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </li>
+                      </ul>                        
+                  </div> -->
+                  
+              </div>
+              
+          </div>
+      </div>
+      <!-- Header Top End -->
+      
+      <!-- Main Box -->
+    <div class="main-box">
+        <div class="auto-container">
+            <div class="outer-container clearfix">
+                  <!--Logo Box-->
+                  <div class="logo-box">
+                      <div class="logo"><a><img src="../../assets/images/PHOTO-2019-03-19-01-54-50.png" width="70" height="50" alt="">America's Marketing & Media Sollutions LLC</a></div>
+                  </div>
+                  
+                  <!--Nav Outer-->
+                  <div class="nav-outer clearfix">
+                  
+                      <!-- Main Menu -->
+                      <nav class="main-menu">
+                          <div class="navbar-header">
+                              <!-- Toggle Button -->    	
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                              </button>
+                          </div>
+                          
+                          <div class="navbar-collapse collapse clearfix">
+                              <ul class="navigation clearfix">
+                                  <li class="current dropdown"><a [routerLink]="['/dashboard']">Dashboard</a>
+                                  </li>
+                                   <li class="dropdown"><a ><button class="btn btn-warning"> Add Applicant</button></a>
+                                    <ul>
+                                      <li><a (click)="redirectTo(1)">Invokana Claim</a></li>
+                                      <li><a (click)="redirectTo(2)">Xarelto Claimn</a></li>
+                                      <li><a (click)="redirectTo(3)">Ivc Claim</a></li>
+                                  </ul>
+                                  </li>
+                                  <li *ngIf="isAdmin" class="dropdown"><a [routerLink]="['/dashboard/userregistration']">Register User</a></li>
+                  <li *ngIf="isAdmin" class="dropdown"><a [routerLink]="['/dashboard/userlist']">Users</a></li>
+                  <li class="dropdown"><a>Applicants</a>
+                      <ul>
+                                          <li><a [routerLink]="['/dashboard/invokanaclaims']">Invokana Claims</a></li>
+                                          <li><a [routerLink]="['/dashboard/xareltoclaims']">Xarelto Claimns</a></li>
+                                          <li><a [routerLink]="['/dashboard/ivcclaims']">Ivc Claims</a></li>
+                                      </ul>
+                  </li>
+                  <li class="dropdown"><a style="cursor: pointer;" (click)="logOut()">Logout</a></li>
+                                  
+                               </ul>
+                          </div>
+                      </nav>
+                      <!-- Main Menu End-->
+                      
+                      <!--Outer Box-->
+                      <!-- <div class="outer-box">
+                          <a class="theme-btn btn-style-one"> <span class="icon flaticon-right-arrow-1"></span> Get a Quote</a>
+                      </div> -->
+                      
+                  </div>
+                  <!--Nav Outer End-->
+                  
+            </div>    
+          </div>
+      </div>
+    
+      <!--Sticky Header-->
+      <div class="sticky-header">
+        <div class="auto-container">
+            
+              <div class="outer-container clearfix">
+                  <!--Logo Box-->
+                  <div class="logo-box pull-left">
+                      <div class="logo"><a><img src="../../assets/images/PHOTO-2019-03-19-01-54-50.png" width="70" height="50" alt="">America's Marketing & Media Sollutions LLC</a></div>
+                  </div>
+                  
+                  <!--Nav Outer-->
+                  <div class="nav-outer clearfix">
+                      <!-- Main Menu -->
+                      <nav class="main-menu">
+                          <div class="navbar-header">
+                              <!-- Toggle Button -->    	
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                              </button>
+                          </div>
+                          
+                          <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class="current dropdown"><a [routerLink]="['/dashboard']">Dashboard</a>
+                                </li>
+                                 <li class="dropdown"><a ><button class="btn btn-warning"> Add Applicant</button></a>
+                                  <ul>
+                                    <li><a (click)="redirectTo(1)">Invokana Claim</a></li>
+                                    <li><a (click)="redirectTo(2)">Xarelto Claimn</a></li>
+                                    <li><a (click)="redirectTo(3)">Ivc Claim</a></li>
+                                </ul>
+                                </li>
+                                <li *ngIf="isAdmin" class="dropdown"><a [routerLink]="['/dashboard/userregistration']">Register User</a></li>
+                <li *ngIf="isAdmin" class="dropdown"><a [routerLink]="['/dashboard/userlist']">Users</a></li>
+                <li class="dropdown"><a>Applicants</a>
+                    <ul>
+                                        <li><a [routerLink]="['/dashboard/invokanaclaims']">Invokana Claims</a></li>
+                                        <li><a [routerLink]="['/dashboard/xareltoclaims']">Xarelto Claimns</a></li>
+                                        <li><a [routerLink]="['/dashboard/ivcclaims']">Ivc Claims</a></li>
+                                    </ul>
+                </li>
+                <li class="dropdown"><a style="cursor: pointer;" (click)="logOut()">Logout</a></li>
+                                
+                             </ul>
+                          </div>
+                      </nav>
+                      <!-- Main Menu End-->
+                      
+                  </div>
+                  <!--Nav Outer End-->
+                  
+            </div>
+              
+          </div>
+      </div>
+      <!--End Sticky Header-->
+      
+  </header>
+  <!--End Main Header -->
+  <div style="margin-top:13%;">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <!--Main Footer-->
+  <footer class="main-footer">
+  
+      <div class="copyright">Copyright &copy; 2019 The <a >America's Marketing & Media Sollutions LLC</a>. All rights reserved.</div>
+  </footer>
+  <!--Main Footer-->
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
