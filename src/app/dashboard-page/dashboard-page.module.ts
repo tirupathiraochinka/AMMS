@@ -1,5 +1,5 @@
 import { NgModule, InjectionToken } from '@angular/core';
-import { CommonModule, PlatformLocation } from '@angular/common';
+import { CommonModule, PlatformLocation, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { DashboardPageComponent } from './dashboard-page.component';
 import { Router, RouterModule, Routes, ActivatedRouteSnapshot } from '@angular/router';
 import { NeedAuthGuard } from '../auth.guard';
@@ -9,12 +9,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { UserlistComponent } from './userlist/userlist.component';
 import { InvokanaclaimsComponent } from './invokanaclaims/invokanaclaims.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { XareltoclaimsComponent } from './xareltoclaims/xareltoclaims.component';
+import { IvcclaimsComponent } from './ivcclaims/ivcclaims.component';
 
 const routes: Routes = [
   {
       path: 'dashboard',
       component: DashboardPageComponent,
       children: [
+       
           {
               path: 'userregistration',
               component: UserregistrationComponent
@@ -26,7 +30,19 @@ const routes: Routes = [
         {
           path: 'invokanaclaims',
           component: InvokanaclaimsComponent
-      }
+      },
+      {
+        path: 'xareltoclaims',
+        component: XareltoclaimsComponent
+    },
+    {
+      path: 'ivcclaims',
+      component: IvcclaimsComponent
+  },
+      {
+        path: 'home',
+        component: DashboardComponent
+    }
       ]
   },
   // {
@@ -44,15 +60,15 @@ const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
 @NgModule({
   
   imports: [
-    CommonModule,RouterModule.forRoot(routes),ReactiveFormsModule,
+    CommonModule,RouterModule.forRoot(routes,{ useHash: true }),ReactiveFormsModule,
     ToastrModule.forRoot({maxOpened:1,preventDuplicates: true}),
   ],
-  declarations: [DashboardPageComponent, UserregistrationComponent, UserlistComponent, InvokanaclaimsComponent],
+  declarations: [DashboardPageComponent, UserregistrationComponent, UserlistComponent, InvokanaclaimsComponent, DashboardComponent, XareltoclaimsComponent, IvcclaimsComponent],
   exports: [
     DashboardPageComponent,
   ],
   providers: [
-    NeedAuthGuard,
+    NeedAuthGuard, {provide: LocationStrategy, useClass: HashLocationStrategy},
     // {
     //     provide: externalUrlProvider,
     //     useValue: (route: ActivatedRouteSnapshot) => {

@@ -8,11 +8,13 @@ import { LoginPageComponent } from '../login-page.component';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
 
+  
+  constructor() { }
+  
   ngOnInit() {
+    LoginPageComponent.moduleName="Service";
     LoginPageComponent.isServiceStyle=true;
-    console.log(LoginPageComponent.isServiceStyle);
     
   }
 

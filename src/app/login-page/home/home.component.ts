@@ -10,8 +10,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    LoginPageComponent.moduleName="Home";
     LoginPageComponent.isServiceStyle=false;
-    console.log(LoginPageComponent.isServiceStyle);
     if( window.localStorage )
     {
       if(!localStorage.getItem('firstLoad') )

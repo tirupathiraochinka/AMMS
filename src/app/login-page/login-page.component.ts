@@ -6,6 +6,7 @@ import { PlatformLocation } from '@angular/common';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { DataAccessService } from '../services/data-access.service';
 import { ToastrService } from 'ngx-toastr';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-login-page',
@@ -13,10 +14,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  static isServiceStyle:boolean;
+  static isServiceStyle:boolean=false;
+  static moduleName:string="Home";
   constructor(private api: ApiService, private customer: CustomerService,location: PlatformLocation, private router: Router,
     private formBuilder: FormBuilder,private dataAccess :DataAccessService,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,private cdRef:ChangeDetectorRef) {
     //   if(localStorage.getItem("TOKEN") && localStorage.getItem("TOKEN")!=null){
     //   location.onPopState(() => {
     //   console.log("pressed back in add!!!!!");
@@ -29,13 +31,23 @@ export class LoginPageComponent {
     // }
 
     this.router.navigateByUrl('/home');
+    LoginPageComponent.isServiceStyle=false
 
     
   }
 
+  ngAfterViewChecked()
+{
+  this.isService;
+  this.modulName;
+  console.log("before   "+this.isService)
+  this.cdRef.detectChanges();
+  console.log("after   "+this.isService);
+  window.scrollTo(0, 0)
+}
+
   tryLogin() {
 
-    console.log(this.login.value)
     this.api.login(
       this.login.value.Username,
       this.login.value.Password
@@ -64,8 +76,11 @@ export class LoginPageComponent {
     return LoginPageComponent.isServiceStyle;
   }
 
+  get modulName() {
+    return LoginPageComponent.moduleName;
+  }
+
   ngOnInit() {
-    console.log(LoginPageComponent.isServiceStyle);
     this.login = this.formBuilder.group({
       Username : ['', Validators.required],
       Password : ['', Validators.required],

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './login-page.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutcompanyComponent } from './aboutcompany/aboutcompany.component';
 import { ServicesComponent } from './services/services.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServicedetailsComponent } from './servicedetails/servicedetails.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,11 @@ const routes: Routes = [
       {
         path: 'services',
         component: ServicesComponent
-    }
+    },
+    {
+      path: 'servicedetails/:name',
+      component: ServicedetailsComponent
+  }
       ]
   },
 ];
@@ -41,12 +46,15 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({maxOpened:1,preventDuplicates: true}),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,{ useHash: true }),
     BrowserAnimationsModule
   ],
-  declarations: [LoginPageComponent, LoginComponent,  HomeComponent, AboutcompanyComponent, ServicesComponent],
+  declarations: [LoginPageComponent, LoginComponent,  HomeComponent, AboutcompanyComponent, ServicesComponent, ServicedetailsComponent],
   exports: [
     LoginPageComponent
-  ]
+  ],
+  providers: [
+     {provide: LocationStrategy, useClass: HashLocationStrategy},
+  ],
 })
 export class LoginPageModule { }

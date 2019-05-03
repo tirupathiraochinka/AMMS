@@ -8,11 +8,12 @@ import { ApiService } from 'src/app/api.service';
 })
 export class InvokanaclaimsComponent implements OnInit {
 
-  userlist:any;
+  userlist=Array();
+  IsNoDataExist:boolean=false;
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.userlist=null;
+    this.userlist=[];
     this.getUserData();
   }
 
@@ -21,7 +22,10 @@ export class InvokanaclaimsComponent implements OnInit {
     // stop here if form is invalid
     this.api.getInvokanaClaims()
     .subscribe(result => {
-      this.userlist=result;
+      //this.userlist=result as Array<Object>;
+      if(this.userlist.length<=0){
+        this.IsNoDataExist=true;
+      }
     });
   }
 

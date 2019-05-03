@@ -11,8 +11,8 @@ export class AboutcompanyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    LoginPageComponent.moduleName="Company";
     LoginPageComponent.isServiceStyle=true;
-    console.log(LoginPageComponent.isServiceStyle);
     
   }
 

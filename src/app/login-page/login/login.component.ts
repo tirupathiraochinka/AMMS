@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { PlatformLocation } from '@angular/common';
 import { DataAccessService } from 'src/app/services/data-access.service';
 import { ToastrService } from 'ngx-toastr';
+import { LoginPageComponent } from '../login-page.component';
 
 @Component({
   selector: 'app-login',
@@ -43,7 +44,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("userinfo",JSON.stringify(r));
             this.dataAccess.changeMessage(JSON.stringify(r));
             this.customer.setToken(r.token);
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/dashboard/home']);
           }
           else{
             this.toastr.error('Oops!....', 'Invalid Credentials');
@@ -63,7 +64,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    
+    LoginPageComponent.moduleName="Login";
     this.login = this.formBuilder.group({
       Username : ['', Validators.required],
       Password : ['', Validators.required],

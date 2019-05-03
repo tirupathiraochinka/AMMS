@@ -4,7 +4,7 @@
   <div class="preloader"></div>
  
   <!-- Main Header-->
-  <header class="main-header header-style-one">
+  <header class="main-header header-style-five">
   
     <!-- Header Top -->
     <div class="header-top">
@@ -81,7 +81,7 @@
                           
                           <div class="navbar-collapse collapse clearfix">
                               <ul class="navigation clearfix">
-                                  <li class="current dropdown"><a [routerLink]="['/dashboard']">Dashboard</a>
+                                  <li class="current dropdown"><a [routerLink]="['/dashboard/home']">Dashboard</a>
                                   </li>
                                    <li class="dropdown"><a ><button class="btn btn-warning"> Add Applicant</button></a>
                                     <ul>
@@ -143,7 +143,7 @@
                           
                           <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a [routerLink]="['/dashboard']">Dashboard</a>
+                                <li class="current dropdown"><a [routerLink]="['/dashboard/home']">Dashboard</a>
                                 </li>
                                  <li class="dropdown"><a ><button class="btn btn-warning"> Add Applicant</button></a>
                                   <ul>
@@ -179,14 +179,31 @@
       
   </header>
   <!--End Main Header -->
-  <div style="margin-top:13%;">
+
+  <section class="user-page-title" style="background-image:url(../../assets/images/background/pattern-4.png);">
+    <div class="auto-container">
+        <h1></h1>
+    </div>
+    <!--Page Info-->
+    <div class="page-info">
+        <div class="auto-container">
+          <div class="inner-container">
+                <ul class="bread-crumb">
+                    <!-- <li><a href="index.html"></a></li>
+                    <li></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--End Page Info-->
+  </section>
+
     <router-outlet></router-outlet>
-  </div>
   
   <!--Main Footer-->
-  <footer class="main-footer">
+  <footer class="main-footer" class="footer">
   
-      <div class="copyright">Copyright &copy; 2019 The <a >America's Marketing & Media Sollutions LLC</a>. All rights reserved.</div>
+      <div class="copyright">Copyright &copy; 2019 The <a >America's Marketing & Media Solutions LLC</a>. All rights reserved.</div>
   </footer>
   <!--Main Footer-->
 

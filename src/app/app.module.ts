@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from "@angular/router";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: '',
@@ -38,7 +39,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,{ useHash: true }),
     LoginPageModule,
     DashboardPageModule,
     HttpClientModule,
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
     
   ],
   providers: [
-    NeedAuthGuard
+    NeedAuthGuard, {provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent]
 })
